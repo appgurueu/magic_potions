@@ -4,11 +4,9 @@ Magic potions which grant the player temporary effects.
 
 ## About
 
-Help can be found under `config_help.md` in the same folder as this.
-
 Depends on the latest [`modlib`](https://github.com/appgurueu/modlib) and [`hud_timers`](https://github.com/appgurueu/hud_timers).
 
-Code licensed under the MIT license. Written by Lars Mueller alias LMD or appguru(eu).
+Code licensed under the MIT license. Media license is CC0. Written by Lars Mueller alias LMD or appguru(eu).
 
 ## Links
 

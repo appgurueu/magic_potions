@@ -67,7 +67,7 @@ function register_potion(potion_def)
                     minvel = {x = -pr, y = 0.1, z = -pr},
                     maxvel = {x = pr, y = 0.5, z = pr},
                     minacc = {x = -0.05, y = 0.1, z = -0.05},
-                    maxacc = {x = 0.05, y = 0.05, z = 0.05},
+                    maxacc = {x = 0.05, y = 0.2, z = 0.05},
                     minexptime = 2,
                     maxexptime = 6,
                     minsize = 0.2,
