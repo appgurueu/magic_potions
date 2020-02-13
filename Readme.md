@@ -33,6 +33,40 @@ There are 3 levels of strength, from minor (weak) over ordinary (medium) to stro
 
 This makes for a total of 15 colorful potions. All effects are lost on death, and you can only use 3 at a time. They all have limited durations.
 
+## Configuration
+
+### Locations
+
+JSON Configuration: `<worldpath>/config/magic_potions.json`
+
+Text Logs (none): `<worldpath>/logs/magic_potions/<date>.json`
+
+Readme (this): `<modpath/gamepath>/magic_potions/Readme.md`
+
+### Default Configuration
+
+Located under `<modpath/gamepath>/magic_potions/default_config.json`
+```json
+{
+  "tiers": {
+    "minor": 3,
+    "ordinary": 5,
+    "strong": 7
+  },
+  "max_in_use": 3
+}
+```
+
+### Settings
+
+#### `tiers`
+
+Key-value lookup, keys are tier names (`"minor"`, `"ordinary"` and `"strong"`) and values are strength (number > 0 and <= 7)
+
+#### `max_in_use`
+
+How many potions can be used at a time. Number > 0 and < 10.
+
 ## API
 
 Mostly self-documenting code. Mod namespace is `magic_potions`, containing all variables & functions.

@@ -1,9 +1,30 @@
-local players = {}
+players = {}
 minetest.register_on_joinplayer(function(player)
     players[player:get_player_name()] = {in_use = 0, timers={}}
 end)
-local tiers = {minor = 3, ordinary = 5, strong = 7}
-local max_in_use = 3
+config =
+    modlib.conf.import(
+    "magic_potions",
+    {
+        type = "table",
+        children = {
+            tiers = {
+                keys = {
+                    type = "string"
+                },
+                values = {
+                    type = "number",
+                    range = {0, 7}
+                }
+            },
+            max_in_use = {
+                type = "number",
+                range = {0, 10}
+            }
+        }
+    }
+)
+modlib.table.add_all(getfenv(1), config)
 function register_potion(potion_def)
     for tier, tier_def in pairs(tiers) do
         local def = {}
@@ -64,9 +85,8 @@ function register_potion(potion_def)
         def.inventory_image =
             "magic_potions_liquid.png^[multiply:#" ..
             potion_def.color .. "^magic_potions_vessel_" .. tier .. ".png^[makealpha:255,0,255"
-        --def.wield_image = def.inventory_image .. "^[transformR270"
         def.description = tier:sub(1, 1):upper() .. tier:sub(2) .. " " .. potion_def.name .. " Potion"
-        --def.stack_max = max_in_use
+        def.stack_max = max_in_use
         minetest.register_craftitem("magic_potions:" .. tier .. "_" .. potion_def.name:lower() .. "_potion", def)
     end
 end
