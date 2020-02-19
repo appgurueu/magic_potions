@@ -235,16 +235,6 @@ function regen_effects(property, effect_name)
     )
 end
 
-minetest.register_on_leaveplayer(
-    function(player)
-        local name = player:get_player_name()
-        for _, prop in pairs({"speed", "jump", "gravity", "healing", "breathing"}) do
-            physic_reverses[prop][name] = nil
-        end
-        players[name] = nil
-    end
-)
-
 regen_effects("hp", "healing")
 
 register_potion(
@@ -279,3 +269,12 @@ end
 
 minetest.register_on_dieplayer(clear_potions)
 minetest.register_on_leaveplayer(clear_potions)
+minetest.register_on_leaveplayer(
+    function(player)
+        local name = player:get_player_name()
+        for _, prop in pairs({"speed", "jump", "gravity", "healing", "breathing"}) do
+            physic_reverses[prop][name] = nil
+        end
+        players[name] = nil
+    end
+)
