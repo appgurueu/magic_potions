@@ -59,6 +59,7 @@ function register_potion(potion_def)
                 player_data.in_use = player_data.in_use - 1
                 potion_def.reverse(playername, gain)
             end
+            timer.on_remove = timer.on_complete
             local pos = player:getpos()
             local pr = 0.2
             minetest.add_particlespawner{
