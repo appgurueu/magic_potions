@@ -1,1 +1,1 @@
-modlib.mod.init("magic_potions")
+modlib.mod.init()
