@@ -3,28 +3,7 @@ players = {}
 minetest.register_on_joinplayer(function(player)
     players[player:get_player_name()] = {in_use = 0, timers={}}
 end)
-config = modlib.conf.import(
-    "magic_potions",
-    {
-        type = "table",
-        children = {
-            tiers = {
-                keys = {
-                    type = "string"
-                },
-                values = {
-                    type = "number",
-                    range = {0, 7},
-                    int = true
-                }
-            },
-            max_in_use = {
-                type = "number",
-                range = {0, 10}
-            }
-        }
-    }
-)
+config = modlib.mod.configuration()
 modlib.table.add_all(magic_potions, config)
 function register_potion(potion_def)
     for tier, tier_def in pairs(tiers) do

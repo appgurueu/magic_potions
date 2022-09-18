@@ -1,1 +1,10 @@
-magic_potions.max_in_use (Magic potions max_in_use) float 3 0.000000 10.000000
+# How many potions can be used at a time
+magic_potions.max_in_use (Magic potions Max in use) float 5 0.000000 10.000000
+
+[magic_potions.tiers]
+
+magic_potions.tiers.minor (Magic potions Tiers Minor) int 3 0 7
+
+magic_potions.tiers.ordinary (Magic potions Tiers Ordinary) int 5 0 7
+
+magic_potions.tiers.strong (Magic potions Tiers Strong) int 7 0 7

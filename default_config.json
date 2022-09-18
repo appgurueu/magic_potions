@@ -1,8 +1,0 @@
-{
-  "tiers": {
-    "minor": 3,
-    "ordinary": 5,
-    "strong": 7
-  },
-  "max_in_use": 3
-}

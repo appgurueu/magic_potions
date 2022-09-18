@@ -33,37 +33,46 @@ This makes for a total of 15 colorful potions. All effects are lost on death, an
 
 ## Configuration
 
-### Locations
+<!--modlib:conf:2-->
+### `max_in_use`
 
-JSON Configuration: `<worldpath>/config/magic_potions.json`
+How many potions can be used at a time
 
-Text Logs (none): `<worldpath>/logs/magic_potions/<date>.json`
+* Type: number
+* Default: `5`
+* &gt;= `0`
+* &lt;= `10`
 
-Readme (this): `<modpath/gamepath>/magic_potions/Readme.md`
+### `tiers`
 
-### Default Configuration
+#### `minor`
 
-Located under `<modpath/gamepath>/magic_potions/default_config.json`
-```json
-{
-  "tiers": {
-    "minor": 3,
-    "ordinary": 5,
-    "strong": 7
-  },
-  "max_in_use": 3
-}
-```
 
-### Settings
+* Type: number
+* Default: `3`
+* Integer
+* &gt;= `0`
+* &lt;= `7`
 
-#### `tiers`
+#### `ordinary`
 
-Key-value lookup, keys are tier names (`"minor"`, `"ordinary"` and `"strong"`) and values are strength (number > 0 and <= 7)
 
-#### `max_in_use`
+* Type: number
+* Default: `5`
+* Integer
+* &gt;= `0`
+* &lt;= `7`
 
-How many potions can be used at a time. Number > 0 and < 10.
+#### `strong`
+
+
+* Type: number
+* Default: `7`
+* Integer
+* &gt;= `0`
+* &lt;= `7`
+
+<!--modlib:conf-->
 
 ## API
 
